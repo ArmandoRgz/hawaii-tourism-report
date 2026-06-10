@@ -1,0 +1,52 @@
+﻿Q1
+
+Using visitor_trends, calculate the total statewide visitor arrivals for each calendar year from 2015 to 2019, filtering to market = 'Total' and destination = 'Statewide'. Order the result from highest to lowest year. Which year peaked?
+
+select year(period_date) per_year, sum(value) visitor_arrivals from visitor_trends where indicator = 'Visitor arrivals' and market = 'Total' and destination = 'Statewide' group by per_year having per_year < 2026;
+
+Q2
+
+From hotel_performance, find the average monthly occupancy rate for each island category (Statewide, Oahu, Maui CTY, Hawaii ISL, Kauai) for the year 2023. Filter to indicator = 'Occupancy' and categories ending in 'All'. Rank them from highest to lowest average.
+
+Q3
+
+From expenditure_patterns, extract the daily spending total (indicator = 'Daily spending ($)', category = 'Grand Total') for all visitor groups across all available years. Which visitor group — by island or by origin market — had the highest average daily spend? Return group, avg spend, and year count.
+
+Q4
+
+Using air_seats, find the monthly total scheduled + charter seats into Honolulu across all markets from January 2019 to December 2024. Filter to market = 'All, Scheduled & Charters' and destination = 'Honolulu'. Aggregate by year and month. Which month consistently has the highest capacity?
+
+Q5
+
+From visitor_characteristics, pull the average party size and the average age of party head for Oahu visitors by year for 2015–2024. Filter to those two indicators specifically. Are there any notable trends in who's traveling to Oahu?
+
+Q6
+
+From visitor_characteristics, for 2022–2024, compare the first timer % vs repeaters % across all island groups (Oahu, Maui, Kauai, Hawaii ISL). Are returning visitors bouncing back post-COVID? Return group, year, avg first timer %, avg repeater %.
+
+Q7
+
+Using a CTE on hotel_performance, calculate the month-over-month change in RevPAR for Waikiki from 2019 to 2024. Flag months where RevPAR dropped more than 10% versus the prior month. How many such dips occurred outside the COVID window (before March 2020 or after December 2021)?
+
+Q8
+
+Join visitor_trends and air_seats on period_date. For each airport (Honolulu, Kahului, Kona, Lihue), calculate the seat-to-visitor ratio — total available seats vs. total visitor arrivals — by year from 2017 to 2024. Which airport is the most over-served or under-served relative to actual visitor traffic?
+
+Q9
+
+Using expenditure_patterns with window functions, rank the top 3 spending categories by daily spend for each visitor origin market (Japan, Korea, Canada, Australia, Europe, US West, US East) in 2023. Filter to indicator = 'Daily spending ($)' and exclude 'Grand Total' and subtotal categories. Return market, rank, category, and daily spend.
+
+Q10
+
+Using visitor_trends, compute the 12-month rolling average of daily census (visitors on island on any given day) for the Total statewide market from 2018 to 2025. Compare the rolling average to the raw monthly value to identify when Hawaii was above or below its "normal" demand trend.
+
+Q11
+
+Join visitor_characteristics and visitor_trends on period_date and island group. For each year from 2019 to 2024, calculate the correlation proxy between % international flight arrivals (from visitor_characteristics) and total visitor arrivals (from visitor_trends) for Oahu. Do higher international flight shares correspond to higher overall arrivals?
+
+Q12
+
+Using all five tables, build a single summary dashboard query using CTEs. For the most recent full year in the data, return: (1) total statewide arrivals, (2) average statewide hotel occupancy, (3) average daily spend for all air visitors, (4) total scheduled seats into all Hawaii airports, and (5) % of Oahu visitors who were first-timers. Output as a single row with labeled columns.
+
+
+
