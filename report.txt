@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿Q1
 
 Using visitor_trends, calculate the total statewide visitor arrivals for each calendar year, filtering to market = 'Total' and destination = 'Statewide'. Order the result from highest to lowest year. Which year peaked?
@@ -9,6 +10,18 @@ Q2
 From hotel_performance, find the average monthly occupancy rate for each island category (Statewide, Oahu, Maui CTY, Hawaii ISL, Kauai). Filter to indicator = 'Occupancy' and categories ending in 'All'. Rank them from highest to lowest average.
 
 select category, month(period_date) per_month, avg(value) percentage from hotel_performance where indicator = 'Occupancy' and category[-3:] = 'All' and year(period_date) < 2026 group by category,per_month order by category, per_month;
+=======
+query
+powerbi
+
+Q1
+
+Using visitor_trends, calculate the total statewide visitor arrivals for each calendar year from 2015 to 2019, filtering to market = 'Total' and destination = 'Statewide'. Order the result from highest to lowest year. Which year peaked?
+
+Q2
+
+From hotel_performance, find the average monthly occupancy rate for each island category (Statewide, Oahu, Maui CTY, Hawaii ISL, Kauai) for the year 2023. Filter to indicator = 'Occupancy' and categories ending in 'All'. Rank them from highest to lowest average.
+>>>>>>> 03dd5e64255946d688c0f7c495aca7c8ef974629
 
 Q3
 

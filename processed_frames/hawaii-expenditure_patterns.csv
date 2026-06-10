@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 group,category,indicator,units,period_date,value
+=======
+Group,Category,Indicator,Units,period_date,value
+>>>>>>> 03dd5e64255946d688c0f7c495aca7c8ef974629
 All visitors by air,Grand Total,Daily spending ($),dollar,2009-01-01,
 Oahu visitors,Grand Total,Daily spending ($),dollar,2009-01-01,
 All visitors by air,Grand Total,% of total spending,percent,2009-01-01,
